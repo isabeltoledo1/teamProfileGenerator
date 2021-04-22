@@ -53,7 +53,34 @@ function init() {
 
   
 
-
+    function addMember() {
+        inquirer.prompt([
+            {
+                type: "input",
+                message: "What is your name?",
+                name: "name",
+            },
+            {
+                type: "input",
+                message: "What is your Id number?",
+                name: "id",
+            },
+            {
+                type: "input",
+                message: "What is your email?",
+                name: "email",
+            },
+            {
+                type: "input",
+                message: "What is your Github Username?",
+                name: "github",
+            }
+        ]).then(answer => {
+            const engineer = new Engineer(answer.name, answer.id, answer.email, answer.github)
+            teamMembers.push(engineer);
+            generateTeam()
+        })
+    }
 
 
     function makeTeam() {
