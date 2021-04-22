@@ -1,5 +1,6 @@
 # Team Profile Generator
 
+![](assets/teamProfile.png)
 
 ### Desription
 

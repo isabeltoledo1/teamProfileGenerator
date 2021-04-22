@@ -53,7 +53,7 @@ function init() {
 
   
 
-    function addMember() {
+    function engineer() {
         inquirer.prompt([
             {
                 type: "input",
@@ -79,6 +79,63 @@ function init() {
             const engineer = new Engineer(answer.name, answer.id, answer.email, answer.github)
             teamMembers.push(engineer);
             generateTeam()
+        })
+    }
+
+    function intern() {
+        inquirer.prompt([
+            {
+                type: "input",
+                message: "What is your name?",
+                name: "name",
+            },
+            {
+                type: "input",
+                message: "What is your Id number?",
+                name: "id",
+            },
+            {
+                type: "input",
+                message: "What is your email?",
+                name: "email",
+            },
+            {
+                type: "input",
+                message: "What school did you attend?",
+                name: "school",
+            }
+        ]).then(answer => {
+            const intern = new Intern(answer.name, answer.id, answer.email, answer.school)
+            teamMembers.push(intern);
+            generateTeam()
+        })
+    }
+
+
+    function generateTeam() {
+        inquirer.prompt([
+            {
+                type: "list",
+                name: "teamChoice",
+                message: "Do you want to add more team members?",
+                choices: ["Manager","Engineer", "Intern", "None"],
+            }
+        ]).then(answer => {
+            switch (answer.teamChoice) {
+                case "Manager":
+                    first();
+                    break;
+                case "Engineer":
+                    engineer();
+                    break;
+                case "Intern":
+                    intern();
+                    break;
+                default:
+                    makeTeam()
+
+
+            }
         })
     }
 
