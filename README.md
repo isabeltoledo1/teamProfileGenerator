@@ -1,13 +1,13 @@
 # Team Profile Generator
 
-![](assets/teamProfile.png)
+
 
 ### Desription
 
 A node.js app that will allow the user to follow a series of questions to add their team members to an html file. 
 
-  
-
+ ![](assets/teamTerminal.png) 
+![](assets/teamProfile.png)
   
 ### Video Walkthrough
     
