@@ -9,7 +9,7 @@ A node.js app that will allow the user to follow a series of questions to add th
  ![](assets/teamTerminal.png) 
 ![](assets/teamProfile.png)
   
-### Video Walkthrough
+
     
  
 
